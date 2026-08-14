@@ -1,127 +1,185 @@
 # Atmospheric Dryness and Evaporative Demand in Southeastern Türkiye (1990–2025)
 
-## A Spatiotemporal Assessment of Vapor Pressure Deficit, Potential Evapotranspiration, and Hydroclimatic Variability
+## A Spatiotemporal Assessment of Vapor Pressure Deficit, Potential Evapotranspiration, Climate Variability, and Atmospheric Water Demand
 
 ---
 
-## Abstract
+# 1. Research Overview
 
-This research project investigates the temporal variability of atmospheric dryness and evaporative demand in Southeastern Türkiye during the 1990–2025 period.
+Atmospheric dryness is an important component of hydroclimatic variability because the atmosphere can exert increasing demand for water even when changes in precipitation alone do not fully indicate the magnitude of environmental water stress.
 
-The study utilizes meteorological data obtained from the NASA Prediction of Worldwide Energy Resources (NASA POWER) database. The climatic framework incorporates air temperature, maximum temperature, minimum temperature, relative humidity, precipitation, wind speed, and surface solar radiation.
+This research investigates the long-term variability of atmospheric dryness and evaporative demand in Southeastern Türkiye during the **1990–2025** period.
 
-Two principal indicators of atmospheric water demand are emphasized: Vapor Pressure Deficit (VPD) and Potential Evapotranspiration (PET). VPD provides an indicator of atmospheric moisture demand and dryness, whereas PET represents the potential atmospheric demand for evapotranspiration.
+The study focuses particularly on:
 
-The analytical framework incorporates non-parametric Mann–Kendall trend analysis, Sen's slope estimation, Pettitt change-point detection, seasonal analysis, and correlation-based assessment of climatic relationships.
+- Vapor Pressure Deficit (VPD)
+- Potential Evapotranspiration (PET)
+- Air temperature
+- Maximum temperature
+- Minimum temperature
+- Relative humidity
+- Precipitation
+- Wind speed
+- Surface solar radiation
 
-The resulting analyses provide an integrated framework for examining long-term hydroclimatic variability and atmospheric drying conditions in a climatically sensitive semi-arid region.
-
----
-
-# 1. Research Objectives
-
-The principal objectives of this study are to:
-
-1. Assess long-term climatic variability across Southeastern Türkiye.
-2. Examine temporal changes in atmospheric moisture conditions.
-3. Quantify Vapor Pressure Deficit (VPD).
-4. Evaluate Potential Evapotranspiration (PET).
-5. Investigate long-term trends in climatic variables.
-6. Quantify the magnitude and direction of detected trends.
-7. Identify potential abrupt climatic change points.
-8. Evaluate seasonal variability.
-9. Investigate relationships among temperature, humidity, precipitation, radiation, wind speed, VPD, and PET.
-10. Develop a reproducible framework for atmospheric-dryness assessment.
+The project combines climatic indicators with statistical trend and change-point analyses to provide an integrated assessment of atmospheric water demand.
 
 ---
 
-# 2. Study Area
+# 2. Why Was This Study Conducted?
 
-Southeastern Türkiye represents an environmentally and climatically sensitive region characterized by substantial spatial and temporal variability in temperature and precipitation.
+## Scientific Motivation
 
-The region includes extensive semi-arid environments and contains agricultural systems that are strongly dependent on climatic conditions and water availability.
+Drought is traditionally evaluated through precipitation deficits. However, precipitation alone does not describe the complete atmospheric water balance.
 
-The geographical setting makes Southeastern Türkiye particularly suitable for investigating atmospheric moisture demand, evaporative conditions, hydroclimatic variability, and potential climate-related changes in atmospheric dryness.
+Atmospheric demand for water can increase as a consequence of:
+
+- Increasing temperature
+- Decreasing relative humidity
+- Increasing evaporative demand
+- Changes in wind speed
+- Changes in available solar energy
+
+Therefore, a region may experience increasing atmospheric dryness even when precipitation trends do not fully explain the observed environmental stress.
+
+This study was designed to investigate this additional dimension of hydroclimatic change.
 
 ---
 
-# 3. Study Period
+## Regional Importance
 
-**1990–2025**
+Southeastern Türkiye is particularly relevant because the region contains extensive agricultural areas, semi-arid environments, and water-dependent ecosystems.
 
-The study covers a 36-year period, providing a sufficiently long temporal framework for examining climatic variability, long-term trends, seasonal characteristics, and potential shifts in atmospheric conditions.
+Changes in atmospheric moisture demand may influence:
+
+- Agricultural water requirements
+- Irrigation demand
+- Soil moisture
+- Vegetation stress
+- Evapotranspiration
+- Ecosystem functioning
+- Surface-water demand
+- Groundwater dependence
+- Drought development
+
+Understanding atmospheric dryness is therefore important for both physical geography and environmental management.
 
 ---
 
-# 4. Data Source
+# 3. Research Questions
 
-The climatic data used in this project are obtained from the:
+The study addresses the following questions:
 
-**NASA Prediction of Worldwide Energy Resources (NASA POWER)** database.
+### RQ1
+How has atmospheric dryness varied during 1990–2025?
 
-The analysis incorporates the following climatic variables:
+### RQ2
+How has Vapor Pressure Deficit changed through time?
 
-| Variable | Scientific relevance |
+### RQ3
+How has Potential Evapotranspiration varied during the study period?
+
+### RQ4
+Are statistically significant climatic trends detectable?
+
+### RQ5
+What is the magnitude and direction of detected trends?
+
+### RQ6
+Are there potential abrupt changes or hydroclimatic regime shifts?
+
+### RQ7
+How are temperature, humidity, precipitation, radiation, and wind related to atmospheric dryness?
+
+### RQ8
+What are the potential environmental implications of increasing atmospheric water demand?
+
+---
+
+# 4. Study Area
+
+Southeastern Türkiye represents a climatically sensitive region characterized by considerable temporal and spatial variability in temperature and precipitation.
+
+The region includes extensive semi-arid landscapes and important agricultural systems.
+
+Its climatic characteristics make it suitable for investigating:
+
+- Atmospheric dryness
+- Evaporative demand
+- Hydroclimatic variability
+- Long-term climate trends
+- Potential climate-related water stress
+
+---
+
+# 5. Study Period
+
+## 1990–2025
+
+The analysis covers a **36-year period**.
+
+This period provides a sufficiently long temporal framework for investigating:
+
+- Long-term climatic variability
+- Temporal trends
+- Seasonal variability
+- Atmospheric dryness
+- Evaporative demand
+- Potential climatic regime shifts
+
+---
+
+# 6. Data Source
+
+The climatic data used in this project were obtained from the:
+
+## NASA Prediction of Worldwide Energy Resources (NASA POWER)
+
+The analysis incorporates multiple climatic variables.
+
+| Variable | Role in the analysis |
 |---|---|
 | Air Temperature | Thermal conditions |
-| Maximum Temperature | Extreme thermal conditions |
+| Maximum Temperature | Warm-season and extreme thermal conditions |
 | Minimum Temperature | Night-time thermal conditions |
 | Relative Humidity | Atmospheric moisture |
-| Precipitation | Water input |
-| Wind Speed | Atmospheric transport and evaporative demand |
-| Surface Solar Radiation | Available energy for evapotranspiration |
+| Precipitation | Atmospheric water input |
+| Wind Speed | Aerodynamic evaporative control |
+| Surface Solar Radiation | Energy availability |
+
+The use of multiple climatic variables allows atmospheric dryness to be evaluated as a process rather than as a single-variable phenomenon.
 
 ---
 
-# 5. Derived Atmospheric Indicators
+# 7. Conceptual Framework
 
-## 5.1 Vapor Pressure Deficit (VPD)
-
-Vapor Pressure Deficit represents the difference between saturation vapor pressure and actual vapor pressure.
-
-VPD is widely used as an indicator of atmospheric moisture demand.
-
-Higher VPD values indicate a larger atmospheric moisture deficit and stronger atmospheric demand for water.
-
-Therefore, VPD provides an important climatic indicator for evaluating atmospheric dryness and potential vegetation water stress.
-
----
-
-## 5.2 Potential Evapotranspiration (PET)
-
-Potential Evapotranspiration represents the atmospheric demand for water under conditions where sufficient water is available.
-
-PET is influenced by several climatic variables, including:
-
-- Temperature
-- Relative humidity
-- Solar radiation
-- Wind speed
-
-Changes in PET are therefore relevant to agricultural water requirements, vegetation stress, soil-water dynamics, and regional water-resource management.
-
----
-
-# 6. Conceptual Relationship
-
-The principal hydroclimatic relationship examined in this project can be summarized as:
+The scientific logic of the study can be summarized as:
 
 ```text
-Temperature
-      │
-      ├──────────────┐
-      ↓              ↓
-Relative Humidity   VPD
-      │              │
-      │              ↓
-      │       Atmospheric Dryness
-      │
-      ├──────────────┐
-      ↓              ↓
-Solar Radiation   Wind Speed
-      │              │
-      └──────┬───────┘
-             ↓
-            PET
-             ↓
-   Atmospheric Water Demand
+                    CLIMATE SYSTEM
+                          │
+        ┌─────────────────┼─────────────────┐
+        │                 │                 │
+        ↓                 ↓                 ↓
+   Temperature       Humidity        Precipitation
+        │                 │                 │
+        └──────────┬──────┘                 │
+                   ↓                        │
+                  VPD                       │
+                   │                        │
+                   ↓                        │
+          Atmospheric Dryness               │
+                                            │
+        ┌───────────────────────────────────┘
+        │
+        ↓
+  Solar Radiation + Wind Speed
+        │
+        ↓
+       PET
+        │
+        ↓
+Atmospheric Evaporative Demand
+        │
+        ↓
+Potential Environmental Water Stress
