@@ -1,144 +1,160 @@
 # Atmospheric Dryness and Evaporative Demand in Southeastern Türkiye (1990–2025)
-## Key Results
 
-### Atmospheric Dryness and Evaporative Demand
-
-<p align="center">
-  <img src="202e4538-eea5-4152-aab6-bff76baffeb5.png" width="850">
-</p>
-
-<p align="center">
-  <img src="23f30e57-adfd-4592-a439-38f7c58a14f0.png" width="850">
-</p>
-
-<p align="center">
-  <img src="3b992e61-115f-4d90-b82c-afc756d1a809.png" width="850">
-</p>
-
-<p align="center">
-  <img src="981facef-13a7-4b97-9fae-7a5f4f9ebe64.png" width="850">
-</p>
-
-<p align="center">
-  <img src="98bdb7ab-39dd-4ba3-b2b6-9a20cf676fe0.png" width="850">
-</p>
-
-<p align="center">
-  <img src="b7f835a0-3a9c-4db4-82d2-a67543896f65.png" width="850">
-</p>
-
-<p align="center">
-  <img src="cd657e82-0586-44aa-9ad3-6b8b9dd7d744.png" width="850">
-</p>
-## Research Overview
-
-This repository presents a long-term assessment of **atmospheric dryness and evaporative demand across Southeastern Türkiye** during 1990–2025.
-
-The study integrates meteorological variables and statistical methods to investigate temporal variability, long-term trends, and potential changes in atmospheric moisture conditions.
+## Spatiotemporal Assessment of Vapor Pressure Deficit, Potential Evapotranspiration and Hydroclimatic Variability
 
 ---
 
-## Key Variables
+## Abstract
+
+This study investigates long-term variability in atmospheric dryness and evaporative demand across Southeastern Türkiye during the 1990–2025 period.
+
+The analysis utilizes meteorological data obtained from the NASA Prediction of Worldwide Energy Resources (NASA POWER) database. The study evaluates air temperature, maximum temperature, minimum temperature, relative humidity, precipitation, wind speed, and surface solar radiation.
+
+Two major indicators of atmospheric water demand are emphasized: Vapor Pressure Deficit (VPD) and Potential Evapotranspiration (PET). VPD is used to characterize atmospheric moisture demand and dryness, whereas PET represents the potential atmospheric demand for evapotranspiration.
+
+The analytical framework incorporates Mann–Kendall trend analysis, Sen's slope estimation, Pettitt change-point detection, seasonal analysis, and correlation-based assessment of climatic relationships.
+
+The resulting visualizations provide an integrated assessment of climatic variability and atmospheric dryness in Southeastern Türkiye.
+
+---
+
+# 1. Study Area
+
+Southeastern Türkiye is a climatically sensitive region characterized by substantial temperature and precipitation variability and predominantly semi-arid environmental conditions.
+
+The region is particularly relevant for investigating atmospheric dryness because changes in temperature, humidity, radiation, wind, and precipitation can modify atmospheric water demand and evaporative conditions.
+
+The study provides a regional-scale assessment of atmospheric dryness and evaporative demand during the 1990–2025 period.
+
+---
+
+# 2. Study Period
+
+**1990–2025**
+
+The 36-year study period provides a long-term temporal framework for investigating climatic variability and potential changes in atmospheric moisture demand.
+
+---
+
+# 3. Data Source
+
+The climatic data used in this project were obtained from the:
+
+**NASA Prediction of Worldwide Energy Resources (NASA POWER)** database.
+
+The analysis includes the following climatic variables:
 
 - Air Temperature
+- Maximum Air Temperature
+- Minimum Air Temperature
 - Relative Humidity
 - Precipitation
 - Wind Speed
+- Surface Solar Radiation
+
+---
+
+# 4. Derived Climatic Indicators
+
+## 4.1 Vapor Pressure Deficit
+
+Vapor Pressure Deficit (VPD) is used as an indicator of atmospheric moisture demand.
+
+VPD represents the difference between the saturation vapor pressure and the actual vapor pressure of the atmosphere.
+
+Higher VPD values indicate greater atmospheric dryness and stronger atmospheric demand for water.
+
+VPD is therefore particularly relevant for evaluating potential atmospheric stress on vegetation and agricultural systems.
+
+---
+
+## 4.2 Potential Evapotranspiration
+
+Potential Evapotranspiration (PET) represents the atmospheric demand for evapotranspiration under conditions where sufficient water is available.
+
+PET provides an important indicator of atmospheric evaporative demand and can be used to assess potential changes in agricultural and ecosystem water requirements.
+
+---
+
+# 5. Statistical Framework
+
+## 5.1 Mann–Kendall Trend Test
+
+The non-parametric Mann–Kendall test is used to assess monotonic temporal trends in climatic variables and atmospheric-dryness indicators.
+
+The method provides information about the direction and statistical significance of temporal changes.
+
+---
+
+## 5.2 Sen's Slope Estimator
+
+Sen's slope is used to quantify the magnitude and direction of monotonic trends.
+
+Positive slope values indicate increasing conditions, whereas negative values indicate decreasing conditions.
+
+For VPD and PET, positive trends may indicate increasing atmospheric moisture demand and evaporative demand.
+
+---
+
+## 5.3 Pettitt Change-Point Test
+
+The Pettitt test is used to identify potential abrupt shifts within climatic time series.
+
+Change-point analysis complements monotonic trend analysis by identifying possible transitions between different periods of climatic behaviour.
+
+---
+
+## 5.4 Seasonal Analysis
+
+Seasonal variability is evaluated to distinguish recurring intra-annual climatic patterns from longer-term changes.
+
+This is particularly important for atmospheric dryness because VPD and PET can exhibit strong seasonal variability.
+
+---
+
+## 5.5 Correlation Analysis
+
+Relationships among the major climatic variables are assessed using correlation analysis.
+
+Particular attention is given to the relationships between:
+
+- Temperature
+- Relative Humidity
+- Precipitation
+- VPD
+- PET
+- Wind Speed
 - Solar Radiation
-- Vapor Pressure Deficit (VPD)
-- Potential Evapotranspiration (PET)
+
+These relationships provide insight into the climatic controls governing atmospheric dryness.
 
 ---
 
-# Key Results
-
-## Atmospheric Dryness
-
-The following figures present the temporal evolution of atmospheric dryness indicators across the study period.
-
-### Vapor Pressure Deficit (VPD)
-
-![VPD Analysis](figures/vpd_analysis.png)
-
-**Figure 1.** Long-term temporal variability of Vapor Pressure Deficit (VPD) across Southeastern Türkiye.
-
----
-
-### Potential Evapotranspiration (PET)
-
-![PET Analysis](figures/pet_analysis.png)
-
-**Figure 2.** Temporal variability of Potential Evapotranspiration (PET) during 1990–2025.
-
----
-
-## Long-Term Trends
-
-Trend analysis was conducted using:
-
-- Mann–Kendall trend test
-- Sen's slope estimator
-- Statistical significance assessment
-
-### Trend Analysis
-
-![Trend Analysis](figures/trend_analysis.png)
-
-**Figure 3.** Long-term trends in atmospheric dryness and evaporative demand indicators.
-
----
-
-## Change-Point Analysis
-
-Abrupt changes in the time series were investigated using the **Pettitt change-point test**.
-
-![Pettitt Analysis](figures/pettitt_analysis.png)
-
-**Figure 4.** Detection of statistically significant change points in atmospheric dryness indicators.
-
----
-
-## Seasonal and Temporal Variability
-
-Seasonal structure and long-term variability were examined using **STL decomposition**.
-
-![STL Decomposition](figures/stl_decomposition.png)
-
-**Figure 5.** Seasonal, trend, and remainder components of the atmospheric dryness time series.
-
----
-
-# Methodological Framework
+# 6. Analytical Framework
 
 ```text
-Meteorological Data
-        │
-        ▼
-Data Quality Control
-        │
-        ▼
-Meteorological Variables
-        │
-        ├── Temperature
-        ├── Relative Humidity
-        ├── Precipitation
-        ├── Wind Speed
-        └── Solar Radiation
-        │
-        ▼
-Atmospheric Dryness Indicators
-        │
-        ├── VPD
-        └── PET
-        │
-        ▼
-Statistical Analysis
-        │
-        ├── Mann–Kendall
-        ├── Sen's Slope
-        ├── Pettitt Test
-        ├── STL Decomposition
-        └── Correlation Analysis
-        │
-        ▼
-Long-Term Climate Assessment
+NASA POWER Climate Data
+          ↓
+Data Processing
+          ↓
+Quality Control
+          ↓
+Climate Variable Analysis
+          ↓
+VPD Calculation
+          ↓
+PET Calculation
+          ↓
+Trend Analysis
+          ↓
+Mann–Kendall Test
+          ↓
+Sen's Slope Estimation
+          ↓
+Pettitt Change-Point Detection
+          ↓
+Seasonal Analysis
+          ↓
+Correlation Analysis
+          ↓
+Scientific Visualization
