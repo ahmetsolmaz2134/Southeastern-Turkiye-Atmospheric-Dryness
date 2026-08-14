@@ -1,100 +1,114 @@
 # Atmospheric Dryness and Evaporative Demand in Southeastern Türkiye (1990–2025)
 
-## Overview
+## Research Overview
 
-This project investigates long-term changes in atmospheric dryness and evaporative demand across Southeastern Türkiye during the 1990–2025 period.
+This repository presents a long-term assessment of **atmospheric dryness and evaporative demand across Southeastern Türkiye** during 1990–2025.
 
-The study uses meteorological data obtained from the NASA Prediction of Worldwide Energy Resources (NASA POWER) database and applies reproducible statistical methods in R.
+The study integrates meteorological variables and statistical methods to investigate temporal variability, long-term trends, and potential changes in atmospheric moisture conditions.
 
-## Research Objectives
+---
 
-- Assess long-term temperature variability.
-- Examine changes in atmospheric moisture conditions.
-- Quantify Vapor Pressure Deficit (VPD).
-- Estimate Potential Evapotranspiration (PET).
-- Detect significant temporal trends.
-- Identify potential climatic change points.
-- Analyse seasonal and long-term variability.
-- Examine relationships among major climatic variables.
-
-## Study Area
-
-Southeastern Türkiye is a climatically sensitive region characterized by substantial temperature and precipitation variability and predominantly semi-arid environmental conditions.
-
-The region provides an appropriate geographical setting for investigating changes in atmospheric moisture demand and evaporative conditions.
-
-## Study Period
-
-**1990–2025**
-
-## Data Source
-
-NASA Prediction of Worldwide Energy Resources (NASA POWER)
-
-## Climate Variables
+## Key Variables
 
 - Air Temperature
-- Maximum Temperature
-- Minimum Temperature
 - Relative Humidity
 - Precipitation
 - Wind Speed
-- Surface Solar Radiation
+- Solar Radiation
+- Vapor Pressure Deficit (VPD)
+- Potential Evapotranspiration (PET)
 
-## Derived Indicators
+---
 
-### Vapor Pressure Deficit
+# Key Results
 
-Vapor Pressure Deficit (VPD) is used to characterize atmospheric moisture demand and atmospheric dryness.
+## Atmospheric Dryness
 
-### Potential Evapotranspiration
+The following figures present the temporal evolution of atmospheric dryness indicators across the study period.
 
-Potential Evapotranspiration (PET) is used to characterize atmospheric evaporative demand.
+### Vapor Pressure Deficit (VPD)
 
-## Statistical Methods
+![VPD Analysis](figures/vpd_analysis.png)
 
-The study will employ:
+**Figure 1.** Long-term temporal variability of Vapor Pressure Deficit (VPD) across Southeastern Türkiye.
 
-- Mann–Kendall Trend Test
-- Sen's Slope Estimator
-- Pettitt Change-Point Test
-- STL Decomposition
-- Pearson Correlation
-- Spearman Correlation
+---
 
-## Analytical Framework
+### Potential Evapotranspiration (PET)
 
-NASA POWER Data  
-↓  
-Data Processing  
-↓  
-Quality Control  
-↓  
-VPD and PET Calculation  
-↓  
-Trend Analysis  
-↓  
-Change-Point Detection  
-↓  
-STL Decomposition  
-↓  
-Correlation Analysis  
-↓  
-Scientific Visualization
+![PET Analysis](figures/pet_analysis.png)
 
-## Repository Structure
+**Figure 2.** Temporal variability of Potential Evapotranspiration (PET) during 1990–2025.
+
+---
+
+## Long-Term Trends
+
+Trend analysis was conducted using:
+
+- Mann–Kendall trend test
+- Sen's slope estimator
+- Statistical significance assessment
+
+### Trend Analysis
+
+![Trend Analysis](figures/trend_analysis.png)
+
+**Figure 3.** Long-term trends in atmospheric dryness and evaporative demand indicators.
+
+---
+
+## Change-Point Analysis
+
+Abrupt changes in the time series were investigated using the **Pettitt change-point test**.
+
+![Pettitt Analysis](figures/pettitt_analysis.png)
+
+**Figure 4.** Detection of statistically significant change points in atmospheric dryness indicators.
+
+---
+
+## Seasonal and Temporal Variability
+
+Seasonal structure and long-term variability were examined using **STL decomposition**.
+
+![STL Decomposition](figures/stl_decomposition.png)
+
+**Figure 5.** Seasonal, trend, and remainder components of the atmospheric dryness time series.
+
+---
+
+# Methodological Framework
 
 ```text
-Southeastern-Turkiye-Atmospheric-Dryness/
-│
-├── README.md
-├── LICENSE
-│
-├── R/
-│   └── analysis.R
-│
-├── data/
-│   └── README.md
-│
-└── figures/
-    └── README.md
+Meteorological Data
+        │
+        ▼
+Data Quality Control
+        │
+        ▼
+Meteorological Variables
+        │
+        ├── Temperature
+        ├── Relative Humidity
+        ├── Precipitation
+        ├── Wind Speed
+        └── Solar Radiation
+        │
+        ▼
+Atmospheric Dryness Indicators
+        │
+        ├── VPD
+        └── PET
+        │
+        ▼
+Statistical Analysis
+        │
+        ├── Mann–Kendall
+        ├── Sen's Slope
+        ├── Pettitt Test
+        ├── STL Decomposition
+        └── Correlation Analysis
+        │
+        ▼
+Long-Term Climate Assessment
