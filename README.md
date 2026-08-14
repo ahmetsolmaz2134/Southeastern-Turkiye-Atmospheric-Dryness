@@ -1,5 +1,35 @@
 # Atmospheric Dryness and Evaporative Demand in Southeastern Türkiye (1990–2025)
+## Key Results
 
+### Atmospheric Dryness and Evaporative Demand
+
+<p align="center">
+  <img src="202e4538-eea5-4152-aab6-bff76baffeb5.png" width="850">
+</p>
+
+<p align="center">
+  <img src="23f30e57-adfd-4592-a439-38f7c58a14f0.png" width="850">
+</p>
+
+<p align="center">
+  <img src="3b992e61-115f-4d90-b82c-afc756d1a809.png" width="850">
+</p>
+
+<p align="center">
+  <img src="981facef-13a7-4b97-9fae-7a5f4f9ebe64.png" width="850">
+</p>
+
+<p align="center">
+  <img src="98bdb7ab-39dd-4ba3-b2b6-9a20cf676fe0.png" width="850">
+</p>
+
+<p align="center">
+  <img src="b7f835a0-3a9c-4db4-82d2-a67543896f65.png" width="850">
+</p>
+
+<p align="center">
+  <img src="cd657e82-0586-44aa-9ad3-6b8b9dd7d744.png" width="850">
+</p>
 ## Research Overview
 
 This repository presents a long-term assessment of **atmospheric dryness and evaporative demand across Southeastern Türkiye** during 1990–2025.
