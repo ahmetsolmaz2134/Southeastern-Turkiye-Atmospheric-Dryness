@@ -1,362 +1,329 @@
-# ============================================================
+# ================================================================
 # SOUTHEASTERN TÜRKİYE ATMOSPHERIC DRYNESS ANALYSIS
-# Project Structure Generator
-# ============================================================
+# Academic GitHub Repository Structure
+# ================================================================
 
-# ------------------------------------------------------------
-# 1. PROJECT NAME
-# ------------------------------------------------------------
+# ------------------------------------------------
+# 1. PROJECT DIRECTORY
+# ------------------------------------------------
 
-project_name <- "Southeastern-Turkiye-Atmospheric-Dryness-Analysis"
+project_dir <- "Southeastern-Turkiye-Atmospheric-Dryness"
 
-# Ana klasörü oluştur
-dir.create(project_name, showWarnings = FALSE)
+if (!dir.exists(project_dir)) {
+  dir.create(project_dir, recursive = TRUE)
+}
 
-# ------------------------------------------------------------
-# 2. FOLDER STRUCTURE
-# ------------------------------------------------------------
+# ------------------------------------------------
+# 2. CLEAN / CREATE DIRECTORY STRUCTURE
+# ------------------------------------------------
 
 folders <- c(
   "data",
   "data/raw",
   "data/processed",
-  "data/metadata",
   "R",
   "figures",
-  "figures/temperature",
-  "figures/humidity",
-  "figures/vpd",
-  "figures/pet",
-  "figures/trends",
   "tables",
-  "tables/descriptive_statistics",
-  "tables/trend_results",
-  "tables/change_points",
-  "docs",
-  "references"
+  "docs"
 )
 
 for (folder in folders) {
   dir.create(
-    file.path(project_name, folder),
+    file.path(project_dir, folder),
     recursive = TRUE,
     showWarnings = FALSE
   )
 }
 
-# ------------------------------------------------------------
-# 3. R SCRIPT FILES
-# ------------------------------------------------------------
+# ------------------------------------------------
+# 3. REMOVE OLD R SCRIPTS
+# ------------------------------------------------
 
-r_scripts <- c(
-  "01_NASA_POWER_Data.R",
-  "02_Data_Cleaning.R",
-  "03_Descriptive_Analysis.R",
-  "04_VPD_Calculation.R",
-  "05_PET_Calculation.R",
-  "06_Aridity_Analysis.R",
-  "07_Mann_Kendall.R",
-  "08_Sens_Slope.R",
-  "09_Pettitt_Test.R",
-  "10_STL_Decomposition.R",
-  "11_Correlation_Analysis.R",
-  "12_Final_Figures.R"
+old_files <- list.files(
+  file.path(project_dir, "R"),
+  full.names = TRUE
 )
 
-for (script in r_scripts) {
+if (length(old_files) > 0) {
+  file.remove(old_files)
+}
 
-  file_path <- file.path(
-    project_name,
-    "R",
-    script
-  )
+# ------------------------------------------------
+# 4. CREATE ACADEMIC R WORKFLOW
+# ------------------------------------------------
+
+scripts <- list(
+
+  "01_data_acquisition.R" = '
+# ================================================================
+# 01_data_acquisition.R
+# NASA POWER Data Acquisition
+# ================================================================
+
+# Study:
+# Atmospheric Dryness and Evaporative Demand in Southeastern Türkiye
+# Period: 1990–2025
+# Data Source: NASA POWER
+
+# This script will retrieve meteorological data from NASA POWER.
+
+# Variables:
+# T2M
+# T2M_MAX
+# T2M_MIN
+# RH2M
+# PRECTOTCORR
+# WS2M
+# ALLSKY_SFC_SW_DWN
+
+# Study locations will be defined in the final analysis stage.
+',
+
+  "02_data_processing.R" = '
+# ================================================================
+# 02_data_processing.R
+# Data Processing and Quality Control
+# ================================================================
+
+# Tasks:
+# 1. Import NASA POWER data
+# 2. Convert dates
+# 3. Check missing observations
+# 4. Detect invalid values
+# 5. Standardize variable names
+# 6. Prepare analysis-ready datasets
+',
+
+  "03_vpd_analysis.R" = '
+# ================================================================
+# 03_vpd_analysis.R
+# Vapor Pressure Deficit Analysis
+# ================================================================
+
+# This script will calculate and analyse Vapor Pressure Deficit (VPD).
+
+# Main objectives:
+# - Calculate VPD
+# - Examine temporal variability
+# - Assess seasonal behaviour
+# - Quantify long-term changes
+',
+
+  "04_pet_analysis.R" = '
+# ================================================================
+# 04_pet_analysis.R
+# Potential Evapotranspiration Analysis
+# ================================================================
+
+# This script will estimate Potential Evapotranspiration (PET).
+
+# Main objectives:
+# - Calculate PET
+# - Examine temporal variability
+# - Assess seasonal patterns
+# - Investigate long-term changes
+',
+
+  "05_trend_analysis.R" = '
+# ================================================================
+# 05_trend_analysis.R
+# Long-Term Trend Analysis
+# ================================================================
+
+# Statistical methods:
+#
+# - Mann–Kendall trend test
+# - Sen’s slope estimator
+#
+# These methods will be applied to:
+#
+# - Temperature
+# - Relative humidity
+# - Precipitation
+# - VPD
+# - PET
+',
+
+  "06_change_point_analysis.R" = '
+# ================================================================
+# 06_change_point_analysis.R
+# Change-Point Analysis
+# ================================================================
+
+# Method:
+# Pettitt change-point test
+#
+# Objective:
+# Identify statistically significant shifts in the temporal
+# behaviour of atmospheric dryness and evaporative demand.
+',
+
+  "07_stl_decomposition.R" = '
+# ================================================================
+# 07_stl_decomposition.R
+# Seasonal-Trend Decomposition
+# ================================================================
+
+# STL decomposition will be used to separate:
+#
+# 1. Seasonal component
+# 2. Trend component
+# 3. Remainder component
+#
+# The analysis will help identify long-term changes while
+# accounting for seasonal variability.
+',
+
+  "08_visualization.R" = '
+# ================================================================
+# 08_visualization.R
+# Scientific Visualization
+# ================================================================
+
+# Planned outputs:
+#
+# - Temperature time series
+# - Relative humidity time series
+# - Precipitation time series
+# - VPD time series
+# - PET time series
+# - Trend figures
+# - Change-point figures
+# - STL decomposition plots
+# - Comparative climate figures
+'
+)
+
+for (filename in names(scripts)) {
 
   writeLines(
-    c(
-      "# ============================================================",
-      paste("#", script),
-      "# Southeastern Türkiye Atmospheric Dryness Analysis",
-      "# ============================================================",
-      "",
-      "# Project period: 1990-2025",
-      "# Data source: NASA POWER",
-      "# Study region: Southeastern Türkiye",
-      ""
-    ),
-    file_path
+    scripts[[filename]],
+    file.path(project_dir, "R", filename)
   )
 }
 
-# ------------------------------------------------------------
-# 4. README
-# ------------------------------------------------------------
+# ------------------------------------------------
+# 5. ACADEMIC README
+# ------------------------------------------------
 
 readme <- '
 # Atmospheric Dryness and Evaporative Demand in Southeastern Türkiye (1990–2025)
 
-## Overview
+## Abstract
 
-This project investigates long-term changes in atmospheric dryness and evaporative demand across Southeastern Türkiye between 1990 and 2025.
+This project investigates long-term changes in atmospheric dryness and evaporative demand across Southeastern Türkiye during the 1990–2025 period.
 
-The analysis uses meteorological data obtained from the NASA POWER database and is conducted entirely in R.
+Meteorological data are obtained from the NASA Prediction of Worldwide Energy Resources (NASA POWER) database and analysed using reproducible statistical workflows implemented in R.
 
-## Research Question
+The study focuses on temperature, relative humidity, precipitation, wind speed, solar radiation, vapor pressure deficit (VPD), and potential evapotranspiration (PET).
 
-How have atmospheric dryness and evaporative demand changed across Southeastern Türkiye between 1990 and 2025?
+The statistical framework combines non-parametric trend analysis, change-point detection, seasonal-trend decomposition, and correlation analysis to characterize temporal changes in atmospheric conditions.
+
+---
+
+## Research Objectives
+
+The study aims to:
+
+1. Quantify long-term changes in temperature and atmospheric moisture.
+2. Assess temporal variability in vapor pressure deficit.
+3. Estimate changes in potential evapotranspiration.
+4. Identify statistically significant climate trends.
+5. Detect potential climatic change points.
+6. Separate long-term trends from seasonal variability.
+7. Examine relationships among temperature, precipitation, humidity, VPD, and PET.
+
+---
 
 ## Study Area
 
-The initial study area includes:
+The study focuses on Southeastern Türkiye, a climatically sensitive region characterized by semi-arid to Mediterranean climatic conditions and substantial spatial and temporal variability in temperature and precipitation.
 
-- Diyarbakır
-- Şanlıurfa
-- Mardin
-- Batman
-- Siirt
-- Şırnak
-- Gaziantep
-- Kilis
-- Adıyaman
+The region is particularly relevant for investigating atmospheric dryness and evaporative demand because increasing thermal conditions may interact with precipitation variability and atmospheric moisture availability.
 
-## Data Source
-
-NASA POWER
-
-## Main Climate Variables
-
-- Air Temperature
-- Maximum Temperature
-- Minimum Temperature
-- Relative Humidity
-- Precipitation
-- Wind Speed
-- Surface Solar Radiation
-
-## Derived Climate Indicators
-
-- Vapor Pressure Deficit (VPD)
-- Potential Evapotranspiration (PET)
-- Aridity Indicators
-- Atmospheric Dryness Indicators
-
-## Statistical Methods
-
-- Mann-Kendall Trend Test
-- Sen’s Slope Estimator
-- Pettitt Change-Point Test
-- STL Decomposition
-- Pearson Correlation
-- Spearman Correlation
-
-## Project Workflow
-
-NASA POWER Data
-        ↓
-Data Cleaning
-        ↓
-Quality Control
-        ↓
-Climate Indicators
-        ↓
-VPD
-        ↓
-PET
-        ↓
-Aridity Analysis
-        ↓
-Trend Analysis
-        ↓
-Change-Point Detection
-        ↓
-STL Decomposition
-        ↓
-Correlation Analysis
-        ↓
-Visualization
-
-## Reproducibility
-
-All data-processing and statistical procedures are implemented in R scripts contained within the `R/` directory.
-
-## Status
-
-Project structure established.
-
-Data acquisition and statistical analysis will be added progressively.
-'
-
-writeLines(
-  readme,
-  file.path(project_name, "README.md")
-)
-
-# ------------------------------------------------------------
-# 5. DATA README
-# ------------------------------------------------------------
-
-data_readme <- '
-# Data
-
-## Raw Data
-
-Original NASA POWER data will be stored in:
-
-`data/raw/`
-
-## Processed Data
-
-Cleaned and analysis-ready datasets will be stored in:
-
-`data/processed/`
-
-## Metadata
-
-Information about NASA POWER parameters, units, coordinates and data processing will be stored in:
-
-`data/metadata/`
-'
-
-writeLines(
-  data_readme,
-  file.path(project_name, "data", "README.md")
-)
-
-# ------------------------------------------------------------
-# 6. METHODOLOGY DOCUMENT
-# ------------------------------------------------------------
-
-methodology <- '
-# Methodology
+---
 
 ## Study Period
 
-1990–2025
+**1990–2025**
 
-## Study Region
-
-Southeastern Türkiye
+---
 
 ## Data Source
 
-NASA POWER meteorological and solar radiation data.
+Meteorological and solar radiation data are obtained from:
+
+**NASA Prediction of Worldwide Energy Resources (NASA POWER)**
+
+The project uses reproducible data acquisition procedures implemented in R.
+
+---
 
 ## Climate Variables
 
-Temperature, relative humidity, precipitation, wind speed and solar radiation.
+The analysis includes:
 
-## Derived Variables
+- Air temperature (T2M)
+- Maximum air temperature (T2M_MAX)
+- Minimum air temperature (T2M_MIN)
+- Relative humidity (RH2M)
+- Precipitation (PRECTOTCORR)
+- Wind speed (WS2M)
+- Surface solar radiation (ALLSKY_SFC_SW_DWN)
 
-Vapor Pressure Deficit (VPD), Potential Evapotranspiration (PET), and atmospheric dryness indicators.
+---
 
-## Statistical Analysis
+## Derived Climate Indicators
 
-Long-term trends will be assessed using the Mann-Kendall test and Sen’s slope estimator.
+The following indicators will be calculated:
 
-Potential abrupt changes will be investigated using the Pettitt change-point test.
+### Vapor Pressure Deficit (VPD)
 
-Seasonal and trend components will be investigated using STL decomposition.
+VPD is used as an indicator of atmospheric moisture demand and atmospheric dryness.
 
-Relationships between climatic variables will be assessed using Pearson and Spearman correlation coefficients.
-'
+### Potential Evapotranspiration (PET)
 
-writeLines(
-  methodology,
-  file.path(project_name, "docs", "methodology.md")
-)
+PET represents the atmospheric evaporative demand under available environmental conditions.
 
-# ------------------------------------------------------------
-# 7. REFERENCES FILE
-# ------------------------------------------------------------
+### Atmospheric Dryness Indicators
 
-references <- '
-# References
+Additional dryness-related indicators will be derived from temperature, precipitation, humidity, and evaporative demand variables.
 
-NASA POWER Project.
-Prediction Of Worldwide Energy Resources.
+---
 
-NASA Langley Research Center.
-NASA POWER Data Access Viewer and API.
+## Methodology
 
-Additional methodological references will be added during the analysis.
-'
+The analytical workflow consists of the following stages:
 
-writeLines(
-  references,
-  file.path(project_name, "references", "references.bib")
-)
-
-# ------------------------------------------------------------
-# 8. LICENSE
-# ------------------------------------------------------------
-
-license <- '
-MIT License
-
-Copyright (c) 2026
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files, to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
-'
-
-writeLines(
-  license,
-  file.path(project_name, "LICENSE")
-)
-
-# ------------------------------------------------------------
-# 9. INSTALL REQUIRED PACKAGES
-# ------------------------------------------------------------
-
-packages <- c(
-  "nasapower",
-  "tidyverse",
-  "lubridate",
-  "trend",
-  "Kendall",
-  "zoo",
-  "scales",
-  "ggplot2"
-)
-
-installed <- rownames(installed.packages())
-
-for (pkg in packages) {
-
-  if (!(pkg %in% installed)) {
-    install.packages(pkg)
-  }
-
-}
-
-# ------------------------------------------------------------
-# 10. CREATE PROJECT SUMMARY
-# ------------------------------------------------------------
-
-cat("\n")
-cat("============================================================\n")
-cat(" PROJECT CREATED SUCCESSFULLY\n")
-cat("============================================================\n\n")
-
-cat("Project:\n")
-cat(project_name, "\n\n")
-
-cat("Study Area:\n")
-cat("Southeastern Türkiye\n\n")
-
-cat("Study Period:\n")
-cat("1990-2025\n\n")
-
-cat("Data Source:\n")
-cat("NASA POWER\n\n")
-
-cat("Main Analysis:\n")
-cat("VPD + PET + Atmospheric Dryness + Trend Analysis\n\n")
-
-cat("Folder:\n")
-cat(normalizePath(project_name), "\n\n")
-
-cat("============================================================\n")
-cat(" NEXT STEP: NASA POWER DATA DOWNLOAD\n")
-cat("============================================================\n")
+```text
+NASA POWER Data
+        |
+        v
+Data Acquisition
+        |
+        v
+Data Quality Control
+        |
+        v
+Climate Variable Processing
+        |
+        v
+VPD Calculation
+        |
+        v
+PET Estimation
+        |
+        v
+Trend Analysis
+        |
+        v
+Change-Point Detection
+        |
+        v
+STL Decomposition
+        |
+        v
+Correlation Analysis
+        |
+        v
+Scientific Visualization
